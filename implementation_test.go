@@ -7,17 +7,17 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestPrefixToPostfix(t *testing.T) {
-	res, err := PrefixToPostfix("+ 5 * - 4 2 3")
+func TestPrefixToInfix(t *testing.T) {
+	res, err := PrefixToInfix("- 7 + 6 / 5 * 4 - 3 + 1 2")
 	if assert.Nil(t, err) {
-		assert.Equal(t, "4 2 - 3 * 5 +", res)
+		assert.Equal(t, "(7 - (6 + (5 / (4 * (3 - (1 + 2))))))", res)
 	}
 }
 
-func ExamplePrefixToPostfix() {
-	res, _ := PrefixToPostfix("+ 2 2")
+func ExamplePrefixToInfix() {
+	res, _ := PrefixToInfix("+ 2 * 3 2")
 	fmt.Println(res)
 
 	// Output:
-	// 2 2 +
+	// (2 + (3 * 2))
 }
