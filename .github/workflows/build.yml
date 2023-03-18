@@ -22,15 +22,11 @@ jobs:
 
       - name: Clean
         run: make clean
-
-      - name: Debug
-        run: |
-          pwd
-          echo ${GOPATH}
-          echo ${GOROOT}
           
       - name: Test
         run: make test
+        env:
+          GOPATH: /home/runner/work/software-architecture-lab2/software-architecture-lab2
 
       - name: Build
         run: make
