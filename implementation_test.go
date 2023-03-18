@@ -36,9 +36,9 @@ func TestPrefixToInfixHardEightOperands(t *testing.T) {
 }
 
 func TestPrefixToInfixNineOperands(t *testing.T) {
-	res, err := PrefixToInfix("* 5 + 44 + 22 - 4 + 8 * 4 + 2 + 2 5")
+	res, err := PrefixToInfix("* 5 + 44 + 22 - 4 + 8 * 4 + 2 ^ 2 5")
 	if assert.Nil(t, err) {
-		assert.Equal(t, "(5 * (44 + (22 + (4 - (8 + (4 * (2 + (2 + 5))))))))", res)
+		assert.Equal(t, "(5 * (44 + (22 + (4 - (8 + (4 * (2 + (2 ^ 5))))))))", res)
 	}
 }
 
