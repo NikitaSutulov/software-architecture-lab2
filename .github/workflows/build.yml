@@ -23,6 +23,9 @@ jobs:
       - name: Clean
         run: make clean
 
+      - name: Get Testify
+        run: make GetTestify
+        
       - name: Test
         run: make test
 
