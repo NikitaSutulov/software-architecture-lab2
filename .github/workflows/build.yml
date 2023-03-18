@@ -24,7 +24,7 @@ jobs:
         run: make clean
           
       - name: Test
-        run: make GetTestify;make test
+        run: make test
         env:
           GOPATH: /home/runner/work/software-architecture-lab2/software-architecture-lab2
 
