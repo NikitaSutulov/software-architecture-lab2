@@ -23,9 +23,12 @@ jobs:
       - name: Clean
         run: make clean
 
-      - name: Get Testify
-        run: make GetTestify
-        
+      - name: Debug
+        run: |
+          pwd
+          echo ${GOPATH}
+          echo ${GOROOT}
+          
       - name: Test
         run: make test
 
