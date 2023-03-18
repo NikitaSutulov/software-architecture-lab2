@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// remove element with index
 func remove(slice []string, s int) []string {
 	return append(slice[:s], slice[s+1:]...)
 }
@@ -28,7 +29,6 @@ func contains(s []string, str string) bool {
 
 // TODO: document this function.
 // PrefixToInfix converts
-// remove element with index
 func PrefixToInfix(input string) (string, error) {
 	inputSplit := strings.Split(input, " ")
 	var operators = []string{"+", "-", "*", "/", "^"}
