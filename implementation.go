@@ -27,8 +27,10 @@ func contains(s []string, str string) bool {
 	return false
 }
 
-// TODO: document this function.
-// PrefixToInfix converts
+// PrefixToInfix converts a prefix expression to an infix expression
+// Input: a string representing a prefix expression
+// Output: a string representing the equivalent infix expression
+// Error: returns an error if unable to convert the input expression
 func PrefixToInfix(input string) (string, error) {
 	inputSplit := strings.Split(input, " ")
 	var operators = []string{"+", "-", "*", "/", "^"}
