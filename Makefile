@@ -4,8 +4,8 @@ clean:
 	rm -rf out
 
 GetTestify:
-	go get https://github.com/stretchr/testify
-	go install https://github.com/stretchr/testify
+	go get github.com/stretchr/testify
+	go install github.com/stretchr/testify
 
 test: *.go
 	go test ./...
