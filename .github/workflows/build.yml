@@ -5,28 +5,24 @@ name: Go
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ master ]
 
 jobs:
-  Explore-GitHub-Actions:
+
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-      - name: Setup
-        uses: actions/setup-go@v2
-        with: 
-          go-version: 1.20
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.18
 
-      - name: Clean
-        run: make clean
-          
-      - name: Test
-        run: make test
-        env:
-          GOPATH: /home/runner/work/software-architecture-lab2/software-architecture-lab2
+    - name: Build
+      run: make out/example
 
-      - name: Build
-        run: make
+    - name: Test
+      run: make test
