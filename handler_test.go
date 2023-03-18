@@ -51,7 +51,7 @@ func TestConsoleWrongNumberArgs(t *testing.T) {
 	_, write, _ := os.Pipe()
 	os.Stdout = write
 	handler := ComputeHandler{
-		Input:  bytes.NewBufferString("0 7 2 3"),
+		Input:  bytes.NewBufferString("0 7 "),
 		Output: write,
 	}
 	err := handler.Compute()
